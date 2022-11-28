@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid mb-3">
+    <img src="https://source.unsplash.com/1400x400/?phone,contact" class="d-block w-100 my-3" alt="...">
+    <h3 class="text-center"> <b>CONTACT US</b> </h3>
+</div>
+<!-- FORM -->
+<form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="container mb-3 py-4">
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Type Your Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="PhoneNumber" class="form-label">Phone Number</label>
+            <input type="phone" class="form-control" name="phone" id="phone" placeholder="PhoneNumber">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="form-label">Description [ Tell us about your issue.
+                ]</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+</form>
+</div>
+<!-- Footer -->
+<div class="container-fluid p-0">
+    <div class="card text-center">
+        <div class="card-header">
+            Developed and Maintained by Joshi Balaji Bheema
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero officia veritatis neque,ea explicabo in.</p>
+            <a href="/" class="btn btn-outline-success">Homepage</a>
+        </div>
+        <div class="card-footer text-muted">
+            few minutes ago
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
